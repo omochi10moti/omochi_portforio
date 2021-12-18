@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- リセットCSS -->
+    <link rel="stylesheet" href="reset.css" />
+    <!-- フォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- icomoon -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="MyPortforio.css" />
+    <title>MyPortforio</title>
+  </head>
+  <body>
+    <!-------------
+      ヘッダー
+    -------------->
+    <header class="header">
+      <div class="header_title">
+        <!-- <h1>webプログラマー11期生のPortforio</h1> -->
+        <a href="#"><h1>おもちもちのPortforio</h1></a>
+      </div>
+
+      <input type="checkbox" id="toggle" class="pc_none" />
+      <label for="toggle" class="toggle_icon open pc_none"></label>
+      <nav class="header_nav">
+        <ul class="header_ul">
+          <li class="header_li"><a href="#Profile">Plofile</a></li>
+          <li class="header_li"><a href="#PastWorks">PastWorks</a></li>
+          <li class="header_li"><a href="#Hobby">Hobby</a></li>
+          <li class="header_li"><a href="#contact">CONTACT</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        <!------------------
+          メインビジュアル
+        --------------------->
+        <div class="mv">
+          <div class="mv_img mv_tadanoumi"></div>
+          <div class="mv_img mv_spring"></div>
+          <a href="#Profile">
+            <div class="scrolldown"><span>Scroll</span></div>
+          </a>
+        </div>
+
+        <!---------
+         プロフィール
+        -------------->
+        <section class="Profile" id="Profile">
+          <div class="profile_wrap">
+            <div class="title">
+              <h2 class="profile_title">Profile</h2>
+            </div>
+
+            <div class="profile_cont">
+              <div class="icon">
+                <img src="img/kaiju.jpg" alt="" class="kaiju" />
+              </div>
+
+              <ul class="profile_profile">
+                <li>
+                  <h4>NAME</h4>
+                  <p>Erina Hayashi</p>
+                </li>
+                <li>
+                  <h4>FROM</h4>
+                  <p>Tokushima</p>
+                </li>
+                <li>
+                  <h4>MASSAGE</h4>
+                  <p>webプログラマー見習いです！</p>
+                </li>
+                <li>
+                  <h4>SNS</h4>
+                  <p>
+                    <a
+                      href="https://www.instagram.com/eriri__photo/?r=nametag"
+                      target="brank"
+                      class="icon-instagram"
+                    >
+                      Instagram</a
+                    >
+                  </p>
+                </li>
+              </ul>
+              <a href="">
+                <button class="prf_btn">詳細プロフィール&ensp;&gt;</button>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!------------
+           過去作を追加
+          ------------------>
+        <section class="PastWorks" id="PastWorks">
+          <div class="title">
+            <h2>Past works</h2>
+          </div>
+
+          <!-------- コーディング --------->
+          <section class="trace">
+            <h3>Trace</h3>
+            <ul class="trace_cont_wrap">
+              <!-- Louvre美容室 -->
+              <li class="trace_cont">
+                <a href="Louvre/index.html">
+                  <img src="img/Louvre.png" alt="" />
+                </a>
+                <p>
+                  <a href="Louvre/index.html">Louvre美容室</a>
+                </p>
+              </li>
+
+              <!-- My Work -->
+              <li class="trace_cont">
+                <a href="MyWork/index.html">
+                  <img src="img/MyWork.png" alt="" class="mywork_img" />
+                </a>
+                <p><a href="MyWork/index.html"> My Work </a></p>
+              </li>
+
+              <!-- あわすぽ -->
+              <li class="trace_cont trace_cont_last">
+                <a href="awaspo/index.html">
+                  <img src="img/awaspo.png" alt="" class="awaspo_img" />
+                </a>
+                <p><a href="awaspo/index.html"> あわすぽ</a></p>
+              </li>
+            </ul>
+            <!-- もっと見るボタン -->
+            <div class="more_btn">
+              <a href="trace.html"
+                >and more <span class="more_span">^</span>
+              </a>
+            </div>
+          </section>
+
+          <!--------- JavaScript- ---------->
+          <section class="JavaScript">
+            <h3>JavaScript</h3>
+            <ul class="js_cont_wrap">
+              <li class="js_cont">
+                <a href="4th_morning_speach/speach.html" target="brank">
+                  <img src="img/js_hair.png" alt="" class="js_img" />
+                </a>
+                <p>診断ゲーム</p>
+              </li>
+
+              <li class="js_cont">
+                <a href="4th_morning_speach/speach.html" target="brank">
+                  <img src="img/js_ToDo.png" alt="" class="js_img" />
+                </a>
+                <p>ToDoリスト</p>
+              </li>
+            </ul>
+          </section>
+
+          <!--------- FaceBookカバー ------------>
+          <section class="FaceBook_cover">
+            <h3>FaceBookカバー</h3>
+            <div class="fb_cont_wrap">
+              <div class="fb_cont">
+                <a href="facebook_cover.html">
+                  <img src="img/cover_01.jpg" alt="" />
+                </a>
+                <p>01.プログラミングスクール風</p>
+              </div>
+            </div>
+
+            <!-- もっと見るボタン -->
+            <div class="more_btn">
+              <a href="facebook_cover.html"
+                >and more <span class="more_span">^</span>
+              </a>
+            </div>
+          </section>
+        </section>
+
+        <!-------------------
+                  趣味
+          ------------------->
+        <section class="Hobby" id="Hobby">
+          <div class="title">
+            <h2>Hobby</h2>
+          </div>
+
+          <!---------- 写真 ------------>
+          <section class="photo" id="photo">
+            <h3>Photo</h3>
+            <div class="photo_cont_wrap">
+              <ul class="photo_ul">
+                <li>
+                  <a href="img_page1.html"
+                    ><img src="img/top/img_01.jpg" alt=""
+                  /></a>
+                </li>
+                <li>
+                  <a href="img_page2.html"
+                    ><img src="img/top/img_02.jpg" alt=""
+                  /></a>
+                </li>
+                <li>
+                  <a href="img_page3.html"
+                    ><img src="img/top/img_03.jpg" alt=""
+                  /></a>
+                </li>
+                <li>
+                  <a href="img_page4.html"
+                    ><img src="img/top/img_04.jpg" alt=""
+                  /></a>
+                </li>
+                <li>
+                  <a href="img_page5.html"
+                    ><img src="img/top/img_05.jpg" alt=""
+                  /></a>
+                </li>
+                <li>
+                  <a href="img_page6.html"
+                    ><img src="img/top/img_06.jpg" alt=""
+                  /></a>
+                </li>
+                <li><img src="img/top/img_07.jpg" alt="" /></li>
+                <li><img src="img/top/img_08.jpg" alt="" /></li>
+                <li><img src="img/top/img_09.jpg" alt="" /></li>
+                <li><img src="img/top/img_10.jpg" alt="" /></li>
+              </ul>
+              <div class="more_btn">
+                <a href="photo_page.html"
+                  >and more <span class="more_span">^</span></a
+                >
+              </div>
+            </div>
+          </section>
+
+          <!------------ ブログ -------------->
+          <section class="blog" id="blog">
+            <h3>Blog</h3>
+            <div class="blog_cont_wrap">
+              <ul class="blog_ul">
+                <li class="blog_cont">
+                  <a href="blog_stamp.html" target="brank"
+                    ><img src="img/line_stamp.jpg" alt="" class="line_stamp" />
+                    <p>LINEスタンプ作ってみた！</p>
+                  </a>
+                </li>
+
+                <li class="blog_cont">
+                  <a href="blog_stamp.html" target="brank"
+                    ><img src="img/line_stamp.jpg" alt="" class="line_stamp" />
+                    <p>最終制作「阿波うどん運動」公開しました！</p>
+                  </a>
+                </li>
+
+                <li class="blog_cont">
+                  <a href="blog_stamp.html" target="brank"
+                    ><img src="img/line_stamp.jpg" alt="" class="line_stamp" />
+                    <p>最終制作「阿波うどん運動」公開しました！</p>
+                  </a>
+                </li>
+              </ul>
+              <div class="more_btn">
+                <a href="photo_page.html"
+                  >and more <span class="more_span">^</span></a
+                >
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <!--------------
+           お問い合わせ
+          ---------------->
+        <section class="contact" id="contact">
+          <div class="title">
+            <h2>CONTACT</h2>
+          </div>
+
+          <div class="contact_wrap" id="contact_wrap">
+            <h3>お問い合わせ</h3>
+            <p>お問い合わせは、メールまたはTwitter（DM）にて承っております。</p>
+            <a class="icon-mail4"></a>
+            <p>メール：omochi10moti@gmail.com</p>
+            <p>
+              <a href="https://twitter.com/omochi_10_moti" target="brank">
+                twitter:@omochi_10_moti</a
+              >
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <a href="#" id="page-top"
+      ><div class="btn_kaiju_dayo">
+        <img src="img/kaiju_01.png" alt="" class="btn_kaiju_01" />
+        <img src="img/kaiju_02.png" alt="" class="btn_kaiju_02" /></div
+    ></a>
+
+    <footer class="footer">
+      <p><a href="explanation.html">このサイトについて</a></p>
+      <small class="copyright">©️2021 omochi</small>
+    </footer>
+  </body>
+</html>

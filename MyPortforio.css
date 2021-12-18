@@ -1,0 +1,838 @@
+@charset "utf-8";
+
+:root {
+  --main-color: #dfa89b;
+  --bace-color: #fffdfa;
+  --sub-color: #eac898;
+  --accent-color: #ea9d65;
+  --text-color: #1e3555;
+  --footer-color: #405572;
+}
+
+html {
+  color: #1e3555;
+  line-height: 1.8em;
+  letter-spacing: 0.05em;
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+body {
+  background-color: var(--bace-color);
+  /* font-size: 20px; */
+  min-width: 320px;
+  font-feature-settings: "palt" 1;
+}
+
+img {
+  z-index: 0;
+  width: 100%;
+}
+
+/*-----------------
+     共通タグ
+-------------------*/
+h1 {
+  font-size: 1.5rem;
+}
+
+h2 {
+  display: inline-block;
+  font-size: 30px;
+  font-weight: bold;
+
+}
+
+h2:not(.profile_title) {
+  background: linear-gradient(transparent 50%, var(--accent-color) 90%);
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+h4 {
+  font-weight: bold;
+}
+
+a {
+  /* color: black; */
+  color: #1e3555;
+}
+
+@media screen and (min-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+/*------------------
+      共通クラス
+ ------------------*/
+.profile_wrap,
+.PastWorks,
+.Hobby,
+.contact {
+  padding: 40px 5% 0;
+  /* width: 90%;
+  margin: 0 auto; */
+  /* padding-top: 40px; */
+  /* margin-top: 100px; */
+}
+
+.title {
+  font-family: "Comfortaa", cursive;
+  text-align: center;
+  margin: 50px;
+  font-size: 5px;
+}
+
+/* ここからmoreボタン */
+.more_btn {
+  height: 50px;
+  text-align: right;
+  margin-top: -15px;
+}
+
+.more_btn a {
+  position: relative;
+  padding: 15px 25px 15px 15px;
+    display: inline-block;
+  text-decoration: none;
+}
+
+.more_span {
+  font-size: 25px;
+  position: absolute;
+  top: 30%;
+  right: 8%;
+  transform: rotate(90deg);
+}
+
+.more_btn a:hover {
+  opacity: 0.8;
+}
+
+.more_btn a::after {
+  position: absolute;
+  bottom: 10px;
+  left: 15px;
+  content: '';
+  width: 84%;
+  height: 1px;
+  background: var(--text-color);
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: .3s;
+}
+
+.more_btn a:hover::after {
+  transform: scale(1, 1);
+}
+/* ここまでmoreボタン */
+
+@media screen and (max-width: 599px) {
+  .sp_none {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .pc_none {
+    display: none;
+  }
+
+.profile_wrap,
+.PastWorks,
+.Hobby,
+.contact {
+  padding: 40px 8% 0;
+}
+
+}
+
+/*-----------------------
+        ヘッダー
+ ------------------------*/
+#toggle {
+  display: none;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.header_title {
+  padding: 0 20px;
+}
+
+.header_title h1 {
+  font-weight: bold;
+  font-size: 18px;
+  /* position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translate(0, -50%); */
+  /* width: 70%; */
+  padding-top: 20px;
+}
+
+.header_nav {
+  /* width: 30%; */
+  /* position: relative; */
+  padding: 0 40px;
+}
+
+/* .header_ul {
+  position: absolute;
+} */
+
+/* タブレット以下 */
+@media screen and (max-width: 599px) {
+  .header_nav {
+    position: fixed;
+    z-index: 4;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #eac898;
+    overflow-y: auto;
+    transform: translateX(100%);
+    transition: 0.3s;
+    padding: 30px;
+    color: white;
+  }
+
+  /* ハンバーガーボタン押すと、右から出てくる */
+  #toggle:checked ~ .header_nav {
+    transform: translateX(0%);
+  }
+
+  /* ハンバーガーの３本線 */
+  .open::after {
+    content: "≡";
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 5;
+    width: 60px;
+    height: 60px;
+    font-size: 55px;
+    line-height: 53px;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  /* ハンバーガー開いた後の × */
+  #toggle:checked + .open::after {
+    content: "×";
+    color: white;
+  }
+
+  .header_ul {
+    margin: 30px 0 50px;
+    line-height: 3;
+  }
+}
+
+/* タブレット以上 */
+@media screen and (min-width: 600px) {
+  .header {
+    position: fixed;
+    height: 90px;
+    background-color: #ffdaa796;
+  }
+
+  .header_title {
+    padding: 0 30px;
+  }
+
+  .header_title h1 {
+    padding-top: 0;
+  }
+
+  .header_ul {
+    display: flex;
+  }
+
+  .header_li + .header_li {
+    margin-left: 20px;
+  }
+}
+
+/*--------------------------
+--ここからメインビジュアル--
+----------------------------- */
+.mv_img {
+  height: 95vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.mv_tadanoumi {
+  background-image: url(img/tadanoumi.jpg);
+}
+
+/* スクロール */
+
+.scrolldown {
+  /*描画位置※位置は適宜調整してください*/
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+}
+
+/*Scrollテキストの描写*/
+.scrolldown span {
+  /*描画位置*/
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  /*テキストの形状*/
+  color: var(--bace-color);
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  /*縦書き設定*/
+  -ms-writing-mode: tb-rl;
+  -webkit-writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
+}
+
+/* 丸の描写 */
+.scrolldown:before {
+  content: "";
+  /*描画位置*/
+  position: absolute;
+  bottom: 0;
+  left: -4px;
+  /*丸の形状*/
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--bace-color);
+  /*丸の動き1.6秒かけて透過し、永遠にループ*/
+  animation: circlemove 1.6s ease-in-out infinite,
+    cirlemovehide 1.6s ease-out infinite;
+}
+
+/*下からの距離が変化して丸の全体が上から下に動く*/
+@keyframes circlemove {
+  0% {
+    bottom: 45px;
+  }
+  100% {
+    bottom: -5px;
+  }
+}
+
+/*上から下にかけて丸が透過→不透明→透過する*/
+@keyframes cirlemovehide {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* 線の描写 */
+.scrolldown:after {
+  content: "";
+  /*描画位置*/
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  /*線の形状*/
+  width: 2px;
+  height: 50px;
+  background-color: var(--bace-color);
+}
+
+/* タブレット以下 */
+@media screen and (max-width: 599px) {
+  .mv_spring {
+    display: none;
+  }
+}
+
+/* タブレット以上 */
+@media screen and (min-width: 600px) {
+  .mv_tadanoumi {
+    display: none;
+  }
+
+  .mv_spring {
+    background-image: url(img/spring.jpg);
+  }
+}
+
+/*---------------------
+ここからプロフィール
+----------------------*/
+.Profile {
+  background-color: #dfa89b;
+  padding: 10px 0;
+}
+
+.profile_wrap {
+  position: relative;
+  padding-bottom: 80px;
+}
+.profile_cont {
+  margin: 0 auto;
+}
+
+.icon {
+  text-align: center;
+}
+
+.kaiju {
+  width: 200px;
+  height: 200px;
+  border: 2px solid rgb(78, 78, 78);
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.profile_profile {
+  height: 270px;
+  max-width: 220px;
+  margin: 0 auto;
+}
+
+.profile_profile h4 {
+  margin: 15px 0 5px;
+}
+
+.icon-instagram {
+  font-size: 18px;
+}
+
+.icon-instagram::before {
+  font-size: 25px;
+}
+
+.prf_btn {
+  width: 150px;
+  height: 25px;
+  border-radius: 10px;
+  border: 1px solid rgb(87, 87, 87);
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  /* background-color: #ea9d65; */
+  background-color: var(--footer-color);
+  box-shadow: 2px 2px 2px var(--text-color);
+  color: white;
+  padding: 1px 0px 1px 6px;
+}
+
+@media screen and (min-width: 600px) {
+  .profile_cont {
+    display: flex;
+  }
+
+  .icon {
+    width: 50%;
+  }
+
+  .profile_profile {
+    width: 50%;
+    padding-left: 50px;
+  }
+}
+
+/*---------------
+ ここから作品
+ ----------------*/
+
+ /* 作品共通クラス */
+.trace,
+.JavaScript,
+.FaceBook_cover {
+  padding: 15px 0;
+}
+
+@media screen and (min-width: 600px) {
+.trace,
+.JavaScript,
+.FaceBook_cover {
+  padding: 30px 0;
+}
+}
+
+.trace_cont_wrap,
+.fb_cont_wrap,
+.js_cont_wrap {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto 30px;
+  padding-top: 40px;
+}
+
+.trace_cont img,
+.js_cont img,
+.fb_cont img {
+  margin-bottom: 15px;
+}
+
+/*--------- コーディング -------------*/
+
+.trace_cont {
+  margin-bottom: 35px;
+  display: inline;
+}
+
+.trace_cont img {
+  width: 100%;
+  border: 1px solid #405572;
+}
+
+.trace_cont img:hover {
+  transform: translate(-1%, -1%);
+  transition: 0.2s;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (min-width: 600px) {
+  .trace_cont {
+    width: 40%;
+    margin: 0 5% 50px;
+  }
+
+  .trace_cont_last {
+    margin-bottom: 0;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .trace_cont {
+    width: 27%;
+    margin-left: 3%;
+    margin-right: 3%;
+  }
+}
+
+/*-----JavaScript------------*/
+.js_cont {
+  margin-bottom: 30px;
+}
+
+.js_img {
+  border: 1px solid #405572;
+}
+
+.js_img:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+  transition: 0.3s;
+}
+
+@media screen and (min-width: 600px) {
+  .js_cont {
+    width: 40%;
+    margin: 0 5%;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .js_cont {
+    width: 27%;
+    margin: 0 3%;
+  }
+}
+
+/*--------facebook-----------*/
+.fb_cont{
+  margin-bottom: 20px;
+}
+
+
+.fb_cont p {
+  margin-left: 25px;
+}
+
+@media screen and (min-width: 600px) {
+  .fb_cont_wrap{
+    display: block;
+  }
+
+  .fb_cont {
+  margin: 0 5%;
+}
+
+.fb_cont{
+  max-width:50%;
+}
+}
+
+
+/*-------------------------
+        ここから趣味
+ ------------------------*/
+
+.Hobby{
+   background-color: rgb(224, 224, 224);
+   background-color: #eac8981a;
+   background-color: #40557209;
+ }
+
+  /* 趣味共通クラス */
+.photo,
+.blog{
+  padding: 30px 0;
+}
+
+ .photo_cont_wrap,
+.blog_cont_wrap{
+  margin: 0 auto 30px;
+  padding-top: 40px;
+}
+
+ /*--------- 写真 --------*/
+
+.photo_ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 30px;
+}
+
+.photo_ul li {
+  width: 49.5%;
+}
+
+.photo_ul img {
+  width: 100%;
+}
+
+@media screen and (min-width: 600px) {
+.photo_ul {
+padding: 0 5%;
+}
+
+.photo_ul li {
+  width: calc(100% / 3);
+}
+}
+
+/*--------- ブログ --------*/
+.blog_ul{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.blog_cont{
+  width: 47%;
+  margin-bottom: 30px;
+}
+
+.blog_cont img {
+  margin-bottom: 15px;
+}
+
+.line_stamp {
+  /* width: 300px;
+  height: 300px; */
+  border: 2px solid #405572;
+  border-radius: 5px;
+}
+
+@media screen and (min-width: 600px) {
+  .blog_ul{
+  justify-content: space-around;
+  padding-bottom: 30px;
+    width: 80%;
+  margin: 0 auto;
+}
+  .blog_cont{
+  width: 28%;
+}
+}
+
+
+/*------------------------------
+        ここからフッター
+ -----------------------------*/
+
+.footer {
+  height: 200px;
+  background-color: #405572;
+  color: white;
+  font-size: 8px;
+  position: relative;
+}
+
+.footer a {
+  color: white;
+}
+
+.copyright {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.icon-mail4 {
+  font-size: 58px;
+  color: rgb(37, 179, 235);
+}
+
+/*---------------------
+--トップへ戻るボタン---
+---------------------*/
+#page-top {
+  display: block;
+  position: fixed;
+  transition: 0.3s;
+  padding: 0.7em;
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  bottom: 20px;
+  right: 30px;
+}
+
+.btn_kaiju_dayo {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  display: block;
+  cursor: pointer;
+}
+.btn_kaiju_dayo img {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.1s ease-in-out;
+}
+
+/* ------画像のきりかえ------- */
+.btn_kaiju_dayo img:nth-of-type(1) {
+  opacity: 1;
+}
+.btn_kaiju_dayo img:nth-of-type(2) {
+  opacity: 0;
+}
+.btn_kaiju_dayo:hover img:nth-of-type(1) {
+  opacity: 0;
+}
+.btn_kaiju_dayo:hover img:nth-of-type(2) {
+  opacity: 1;
+}
+
+@media screen and (min-width: 600px) {
+  #page-top {
+    width: 100px;
+    height: 100px;
+  }
+
+  .btn_kaiju_dayo {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/*-----------------------------------------------------------
+-------------------------- 下層ページ ------------------------
+--------------------------------------------------------------*/
+
+/*-------------------------
+------- JavaScript --------
+--------------------------*/
+
+.js_img1 {
+  background-image: url(img/js_hair.png);
+  background-size: cover;
+  background-position: center;
+  width: 100px;
+  height: 100px;
+}
+
+.js_img2 {
+  background-image: url(img/js_ToDo.png);
+  background-size: cover;
+  background-position: center;
+  width: 100px;
+  height: 100px;
+}
+
+/*-------------------------
+----- FaceBookカバー ------
+--------------------------*/
+.facebook_img {
+  width: 150px;
+  height: 150px;
+  margin: 20px;
+  border: 1px solid #405572;
+}
+
+.facebook_img:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+.facebook_img1 {
+  background-image: url(img/cover_01.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.facebook_img2 {
+  background-image: url(img/cover_02.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.facebook_img3 {
+  background-image: url(img/cover_03.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+@media screen and (min-width: 600px) {
+  .facebook_img {
+    width: 250px;
+    height: 250px;
+    margin: 20px;
+  }
+}
+
+
+/*-------------------------
+---------- 写真 -----------
+--------------------------*/
+.phto_page_title_div {
+  text-align: center;
+  /* height: 1px; */
+  padding: 20% 0;
+}
+
+.phto_page_title {
+  font-size: 35px;
+  box-sizing: border-box;
+}
+
+.photo_page_photowrap {
+  width: 90%;
+  margin: 0 auto;
+}
